@@ -1,4 +1,4 @@
-﻿# Dependencies
+# Dependencies
 node_modules/
 */node_modules/
 
@@ -25,3 +25,7 @@ logs/
 .idea/
 .DS_Store
 Thumbs.db
+
+# AI tools (Antigravity)
+.agents/
+skills-lock.json
