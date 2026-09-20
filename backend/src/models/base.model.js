@@ -5,10 +5,6 @@ class BaseModel {
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
-
-  toJSON() {
-    return { ...this };
-  }
 }
 
 module.exports = BaseModel;

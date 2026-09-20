@@ -9,15 +9,6 @@ class User extends BaseModel {
     this.role = role;
     this.isActive = isActive;
   }
-
-  // Phương thức nghiệp vụ nội tại của đối tượng (Encapsulation)
-  isAdmin() {
-    return this.role === 'admin';
-  }
-
-  formatDisplayName() {
-    return `${this.name} (${this.role.toUpperCase()})`;
-  }
 }
 
 module.exports = User;
