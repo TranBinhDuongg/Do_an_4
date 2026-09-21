@@ -7,12 +7,8 @@ class BaseRepository {
     initialData.forEach(item => this.collection.set(item.id.toString(), item));
   }
 
-  async findAll(filterFn = null) {
-    let items = Array.from(this.collection.values());
-    if (filterFn && typeof filterFn === 'function') {
-      items = items.filter(filterFn);
-    }
-    return items;
+  async findAll() {
+    return Array.from(this.collection.values());
   }
 
   async findById(id) {
