@@ -25,14 +25,11 @@ class UserService extends BaseService {
       id: Date.now().toString(),
       name: userData.name,
       email: userData.email,
-      role: userData.role || 'user',
-      isActive: true,
-      createdAt: new Date(),
-      updatedAt: new Date()
+      role: userData.role,
     });
 
     // 3. Lưu qua Repository
-    return await this.repository.create(newUser);
+    return this.repository.create(newUser);
   }
 
   async updateUser(id, updateData) {
@@ -45,7 +42,7 @@ class UserService extends BaseService {
       }
     }
 
-    return await this.repository.update(id, updateData);
+    return this.repository.update(id, updateData);
   }
 }
 

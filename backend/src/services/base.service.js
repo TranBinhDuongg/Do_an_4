@@ -8,7 +8,7 @@ class BaseService {
   }
 
   async getAll() {
-    return await this.repository.findAll();
+    return this.repository.findAll();
   }
 
   async getById(id) {
@@ -20,8 +20,8 @@ class BaseService {
   }
 
   async delete(id) {
-    await this.getById(id); // Check existence
-    return await this.repository.delete(id);
+    await this.getById(id);
+    return this.repository.delete(id);
   }
 }
 
