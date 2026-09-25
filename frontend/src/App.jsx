@@ -1,8 +1,8 @@
-import React from 'react';
-import { HomePage } from './pages/Home/HomePage';
+import { TrangTaiKhoan } from './pages/TaiKhoan/TrangTaiKhoan';
 
 function App() {
-  return <HomePage />;
+  return <TrangTaiKhoan />;
 }
 
 export default App;
+
