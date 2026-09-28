@@ -29,3 +29,6 @@ Thumbs.db
 # AI tools (Antigravity)
 .agents/
 skills-lock.json
+
+# Local database scripts
+/backend/sql/
