@@ -4,6 +4,7 @@ const userRoutes = require('./user.routes');
 
 // Mount routes
 router.use('/users', userRoutes);
+router.use('/auth', require('./auth.routes'));
 
 router.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date() });
