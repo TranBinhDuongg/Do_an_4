@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Nhân viên cứu hộ",
+    "slug": "nhan-vien-cuu-ho",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.doan4.nhanviencuuho"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.doan4.nhanviencuuho"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "cuuho-nhan-vien"
+  }
+}
