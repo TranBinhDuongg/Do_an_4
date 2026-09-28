@@ -1,5 +1,5 @@
 {
-  "name": "nguoi-bao-tin",
+  "name": "mobile-nguoi-bao-tin",
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {

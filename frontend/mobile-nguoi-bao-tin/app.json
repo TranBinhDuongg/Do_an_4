@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Báo tin cứu hộ",
-    "slug": "nguoi-bao-tin",
+    "slug": "mobile-nguoi-bao-tin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -1,7 +1,7 @@
 # Hai ứng dụng mobile
 
-- `nguoi-bao-tin`: ứng dụng dành cho người báo tin.
-- `nhan-vien-cuu-ho`: ứng dụng dành cho nhân viên cứu hộ.
+- `frontend/mobile-nguoi-bao-tin`: ứng dụng dành cho người báo tin.
+- `frontend/mobile-nhan-vien-cuu-ho`: ứng dụng dành cho nhân viên cứu hộ.
 - Cả hai dùng React Native, Expo và TypeScript, kết nối cùng backend Express.
 
 ## Chạy ứng dụng
