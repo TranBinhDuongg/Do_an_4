@@ -14,7 +14,7 @@ class App {
   }
 
   setupMiddlewares() {
-    this.app.use(cors({ origin: config.clientUrl, credentials: true }));
+    this.app.use(cors({ origin: [config.clientUrl, ...(process.env.MOBILE_WEB_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean)], credentials: true }));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan('dev'));

@@ -8,9 +8,10 @@ const dummyHash = bcrypt.hash(randomBytes(32).toString('hex'), 12);
 const tokenOptions = { algorithm: 'HS256', issuer: 'cuu-ho-backend', audience: 'dieu-phoi' };
 
 class AuthService {
-  constructor(repository, secret) {
+  constructor(repository, secret, role = 'dieu_phoi') {
     this.repository = repository;
     this.secret = secret;
+    this.role = role;
   }
 
   requireSecret() {
@@ -24,7 +25,7 @@ class AuthService {
   }
 
   isDispatcher(account) {
-    return account && account.trang_thai === 'hoat_dong' && account.ma_vai_tro === 'dieu_phoi';
+    return account && account.trang_thai === 'hoat_dong' && account.ma_vai_tro === this.role;
   }
 
   async login(body) {
@@ -41,7 +42,7 @@ class AuthService {
       throw new AppError('Thông tin đăng nhập không đúng hoặc tài khoản không được phép truy cập.', 401);
     }
     return {
-      accessToken: jwt.sign({}, this.secret, { ...tokenOptions, subject: String(account.id), expiresIn: '1h' }),
+      accessToken: jwt.sign({}, this.secret, { ...tokenOptions, audience: this.role, subject: String(account.id), expiresIn: '1h' }),
       tokenType: 'Bearer',
       expiresIn: 3600,
       user: this.publicUser(account),
@@ -55,7 +56,7 @@ class AuthService {
     let payload;
     try {
       payload = jwt.verify(match[1], this.secret, {
-        algorithms: ['HS256'], issuer: tokenOptions.issuer, audience: tokenOptions.audience,
+        algorithms: ['HS256'], issuer: tokenOptions.issuer, audience: this.role,
       });
       if (typeof payload.sub !== 'string' || !/^\d+$/.test(payload.sub)) throw new Error('Invalid subject');
     } catch {
