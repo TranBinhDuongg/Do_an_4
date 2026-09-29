@@ -54,3 +54,7 @@ body:has(.dispatch-auth) { display:block; background:#f4f5f1; color:#243e35; }
 
 
 
+
+.dispatch-fields { border:0; padding:0; margin:0; min-width:0; }
+.dispatch-fields:disabled { opacity:.7; }
+.dispatch-fields:disabled button { cursor:wait; }
