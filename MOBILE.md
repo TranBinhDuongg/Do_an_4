@@ -2,7 +2,7 @@
 
 - `frontend/mobile-nguoi-bao-tin`: ứng dụng dành cho người báo tin.
 - `frontend/mobile-nhan-vien-cuu-ho`: ứng dụng dành cho nhân viên cứu hộ.
-- Cả hai dùng React Native, Expo và TypeScript, kết nối cùng backend Express.
+- Cả hai dùng React Native và Expo, kết nối cùng backend Express. App nhân viên dùng JSX cho màn hình.
 
 ## Chạy ứng dụng
 
@@ -25,7 +25,9 @@ Hai app sử dụng cổng Metro khác nhau: người báo tin 8081, cứu hộ 
 
 ## Phạm vi hiện tại
 
-Đây là bộ khung khởi đầu với giao diện theo vai trò và nút gọi API thật `GET /api/health`. Chưa có đăng nhập, gửi tin báo, nhận nhiệm vụ, GPS hay thông báo đẩy. Các chức năng này cần API nghiệp vụ và phân quyền phía backend trước khi tích hợp. Vai trò hiển thị trong app không phải cơ chế xác thực.
+App người báo tin là bộ khung khởi đầu. App nhân viên cứu hộ đã có giao diện tổng quan, danh sách và chi tiết nhiệm vụ, đội cứu hộ, tài khoản và thông báo mẫu. Có thể thử tiếp nhận, cập nhật tiến độ và hoàn thành nhiệm vụ bằng dữ liệu minh họa; trạng thái chỉ tồn tại trong phiên hiện tại. Xem `frontend/mobile-nhan-vien-cuu-ho/README.md` để biết luồng thao tác.
+
+App nhân viên đã thêm màn hình đăng nhập và API xác thực vai trò cứu hộ, giữ phiên bằng SecureStore trên điện thoại, cùng màn hình đăng ký thiết bị nhận thông báo. Cần áp dụng migration phiên và cấu hình backend; xem README của app nhân viên. Chưa kết nối dữ liệu nhiệm vụ thực tế hoặc luồng gửi thông báo từ điều phối. Chế độ xem thử được tách riêng khỏi tài khoản thật.
 
 Mỗi app có `src/config.ts` để đọc địa chỉ API và `src/api.ts` để kiểm tra kết nối. Không đặt mật khẩu, khóa bí mật hay thông tin kết nối database trong biến `EXPO_PUBLIC_*` vì chúng được đóng gói vào app. Khi triển khai thực tế, dùng backend HTTPS.
 
