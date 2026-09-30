@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Báo tin cứu hộ",
+    "name": "Cứu hộ động vật",
     "slug": "mobile-nguoi-bao-tin",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,22 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "scheme": "cuuho-nguoi-bao-tin"
+    "scheme": "cuuho-nguoi-bao-tin",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Cho phép chụp ảnh hiện trường để báo tin cứu hộ động vật.",
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Cho phép lấy vị trí hiện tại để đính kèm tin báo."
+        }
+      ]
+    ]
   }
 }
